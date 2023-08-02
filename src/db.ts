@@ -1,4 +1,7 @@
 import { DataSource } from "typeorm"
+import { User } from "./entities/User"
+import { Role } from "./entities/Role"
+import { SnakeNamingStrategy } from "typeorm-naming-strategies"
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -9,7 +12,8 @@ export const AppDataSource = new DataSource({
     database: "shift_db",
     synchronize: true,
     logging: true,
-    entities: [],
+    entities: [User, Role],
     subscribers: [],
     migrations: [],
+    namingStrategy: new SnakeNamingStrategy()
 })
