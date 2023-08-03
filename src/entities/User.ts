@@ -1,8 +1,8 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { BaseEntity, Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { Role } from "./Role";
 
 @Entity("users")
-export class User {
+export class User extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
 
@@ -12,19 +12,19 @@ export class User {
     @Column()
     lastName: string
 
-    @Column()
+    @Column({ nullable: true})
     phoneNumber: string
 
     @Column()
     speciality: string
 
-    @CreateDateColumn()
+    @CreateDateColumn({type: "timestamp", nullable: true})
     createdAt: Date
 
-    @UpdateDateColumn()
+    @UpdateDateColumn({type: "timestamp", nullable: true})
     updatedAt: Date
 
-    @DeleteDateColumn()
+    @DeleteDateColumn({type: "timestamp", nullable: true})
     deletedAt: Date
 
     //Relations
