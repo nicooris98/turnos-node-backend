@@ -44,7 +44,7 @@ export const removeRole = async (req: Request, res: Response) => {
 
     if(role) {
         await role?.softRemove()
-        res.json({message: "Eliminado correctamente"})
+        res.json({message: "Removed succesfully"})
     } else res.status(404).json({message: "role not found"})
 }
 
