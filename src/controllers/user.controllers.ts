@@ -44,8 +44,8 @@ export const findUserById = async (req: Request, res: Response) => {
 
 export const findUsers = async (req: Request, res: Response) => {
     try {
-        const user = await User.find()
-        return res.json(user)
+        const users = await User.find()
+        return res.json(users)
     } catch (error) {
         if(error instanceof Error) {
             return res.status(500).json({message: error.message})

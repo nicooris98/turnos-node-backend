@@ -25,8 +25,8 @@ export const findRoleById = async (req: Request, res: Response) => {
 
 export const findRoles = async (req: Request, res: Response) => {
     try {
-        const role = await Role.find()
-        return res.json(role)
+        const roles = await Role.find()
+        return res.json(roles)
     } catch (error) {
         if(error instanceof Error) {
             return res.status(500).json({message: error.message})

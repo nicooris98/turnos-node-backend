@@ -43,8 +43,8 @@ export const findScheduleById = async (req: Request, res: Response) => {
 
 export const findSchedules = async (req: Request, res: Response) => {
     try {
-        const schedule = await Schedule.find()
-        return res.json(schedule)
+        const schedules = await Schedule.find()
+        return res.json(schedules)
     } catch (error) {
         if(error instanceof Error) {
             return res.status(500).json({message: error.message})
