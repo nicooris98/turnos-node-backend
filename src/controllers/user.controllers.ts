@@ -24,7 +24,7 @@ export const createUser = async (req: Request, res: Response) => {
         newUser.save()
 
         res.json(newUser);
-    } else res.status(400).json({message: "No mando role"})
+    } else res.status(400).json({message: "user not provided"})
 }
 
 export const findUserById = async (req: Request, res: Response) => {

@@ -1,5 +1,4 @@
 import { Request, Response } from "express"
-import { getManager } from "typeorm";
 import { Role } from "../entities/Role";
 
 export const createRole = async (req: Request, res: Response) => {
