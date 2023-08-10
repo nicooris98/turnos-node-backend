@@ -9,7 +9,9 @@ import shiftRoutes from "./routes/shift.routes"
 const app = express()
 
 app.use(morgan("dev"))
-app.use(cors())
+app.use(cors({
+  origin: "*",
+}))
 app.use(express.json())
 
 app.use(userRoutes)

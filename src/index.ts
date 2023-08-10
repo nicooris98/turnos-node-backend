@@ -6,12 +6,11 @@ async function main() {
     try {
         await AppDataSource.initialize()
         console.log("Database connected")
-        app.listen(3000)
-        console.log("Server is listening on port ", 3000)
+        app.listen(process.env.API_PORT)
+        console.log("Server is listening on port ", process.env.API_PORT)
     } catch (error) {
         console.error(error)
     }
-    
 }
 
 main()

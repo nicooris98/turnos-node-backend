@@ -7,6 +7,9 @@ export class Schedule extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
 
+    @Column()
+    userId: number
+
     @Column({type: "time"})
     timeFrom: Date
 
