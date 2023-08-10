@@ -7,6 +7,9 @@ export class User extends BaseEntity {
     id: number
 
     @Column()
+    roleId: number
+
+    @Column()
     firstName: string
 
     @Column()

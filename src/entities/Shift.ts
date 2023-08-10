@@ -7,6 +7,9 @@ export class Shift extends BaseEntity {
     id: number
 
     @Column()
+    scheduleId: number
+
+    @Column()
     firstName: string
 
     @Column()
